@@ -1,0 +1,5 @@
+-r base.txt
+mypy==0.991
+mypy-extensions==1.0.0
+tomli==2.0.1
+typing_extensions==4.4.0
