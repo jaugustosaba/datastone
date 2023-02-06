@@ -115,6 +115,7 @@ Container's enviroment varibles
 | DS_PORT | 8080 | port used by the API server |
 | DS_REUSE_ADDR | false | should reuse address ? |
 | DS_LOG_LEVEL | INFO | application log level |
+| DS_RELOAD_TIMEOUT | 300 | time between currency data refresh in seconds |
 
 ### endpoints
 

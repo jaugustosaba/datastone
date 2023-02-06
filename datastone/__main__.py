@@ -34,6 +34,7 @@ def main():
     parser.add_argument('--port', dest='port', type=int, default=8080)
     parser.add_argument('--reuse-address', dest='reuse_address', type=bool, default=False)
     parser.add_argument('--log-level', dest='loglevel', type=str, choices=list(_loglevel.keys()), default='INFO')
+    parser.add_argument('--reload-timeout', dest='reload_timeout', type=int, default=5*60)
     args = parser.parse_args()
     try:
         logging.basicConfig(level=_loglevel[args.loglevel])
@@ -43,7 +44,8 @@ def main():
             api_source=APISource(args.api_source),
             ConversorType=Conversor,
             port=args.port,
-            reuse_address=args.reuse_address
+            reuse_address=args.reuse_address,
+            reload_timeout=args.reload_timeout,
         )
     except Exception as e:
         print(str(e), file=sys.stderr)
